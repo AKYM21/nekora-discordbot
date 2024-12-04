@@ -2,7 +2,7 @@
 
 ## 概要
 
-猫羅サキDiscordサーバーで使用している歓迎用DiscordBOT。基本的に自分用です。
+Vtuberの[猫羅サキ](https://x.com/nekoneko_nekora)さんのDiscordサーバーで使用している歓迎用DiscordBOTです。基本的に自分用に公開しています。
 
 ## サーバー内での動き
 
