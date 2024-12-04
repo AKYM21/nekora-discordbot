@@ -33,6 +33,7 @@ AISATSU_CHANNEL_ID = "挨拶チャンネルのID"
 UNEI_CHANNEL_ID = "運営チャンネルのID"
 TEST_CHANNEL_ID = "テストチャンネルのID"
 TALK_CHANNEL_ID = "雑談チャンネルのID"
+RULES_CHANNEL_ID = "規約チャンネルのID"
 ROLEID = "反応させたいロールID"
 
 # 接続に必要なオブジェクトを生成
@@ -58,7 +59,7 @@ async def on_member_join(member):
     time.sleep(5)
     # 挨拶チャンネルに発言する
     channel = client.get_channel(AISATSU_CHANNEL_ID)
-    message = member.mention + 'さん\n猫羅のファンミーティングサーバーへようこそ！\nまずは<#1087067734828925119>をお読みください。\n<#1087067734828925119>でリアクションをすることによって各チャンネルへアクセスできるようになります。\nよろ>しくおねがいします。m(__)m\nﾋﾟﾎﾟ'
+    message = member.mention + 'さん\n猫羅のファンミーティングサーバーへようこそ！\nまずは<#' + RULES_CHANNEL_ID + '>をお読みください。\n<#' + RULES_CHANNEL_ID + '>でリアクションをすることによって各チャンネルへアクセスできるようになります。\nよろ>しくおねがいします。m(__)m\nﾋﾟﾎﾟ'
     await channel.send(message)
 
 @client.event
