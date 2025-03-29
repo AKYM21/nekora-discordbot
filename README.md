@@ -12,12 +12,12 @@ Vtuberの[猫羅サキ](https://x.com/nekoneko_nekora)さんのDiscordサーバ�
 * ログも出します。同じディレクトリ内に指定したログを出力します。
 * 起動時に運営チャンネルに起動メッセージを出します。  
 * proxmox上にあるLXCコンテナでsystemctlを使用して立ち上げています。
-* 環境変数BOT_ENVを指定することで、指定した.envで立ち上げることができます。本番用として.env.production、開発用として.env.developmentを作成してください。
+* .envファイルにBOTトークンやチャンネルIDを書くようにしました。
+  * 環境変数BOT_ENVを指定することで、指定した.envで立ち上げることができます。本番用として.env.production、開発用として.env.developmentを作成してください。
 
 ## デプロイ方法
 
 * initファイルをいい感じに書いてsystemd/system配下に何かしらの形で置きます。
-
 * 【一例】discord_nekora_discordbot.service
 
 ```initfile
