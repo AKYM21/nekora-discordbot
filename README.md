@@ -12,3 +12,33 @@ Vtuberの[猫羅サキ](https://x.com/nekoneko_nekora)さんのDiscordサーバ�
 * ログも出します。同じディレクトリ内に指定したログを出力します。
 * 起動時に運営チャンネルに起動メッセージを出します。  
 * proxmox上にあるLXCコンテナでsystemctlを使用して立ち上げています。
+
+## デプロイ方法
+
+* initファイルをいい感じに書いてsystemd/system配下に何かしらの形で置きます。
+
+* 【一例】discord_nekora_discordbot.service
+
+```initfile
+[Unit]
+Description=discord_nekora_discordbot
+After=network.target
+
+[Service]
+Type=simple
+
+WorkingDirectory=/home/yuri/bin/nekora_discordbot
+
+Environment=BOT_ENV=production
+
+ExecStart=/home/yuri/bin/nekora_discordbot/.nekora_venv/bin/python3 /home/yuri/bin/nekora_discordbot/main.py
+
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
+StandardOutput=append:/home/yuri/bin/nekora_discordbot/bot.log
+StandardError=append:/home/yuri/bin/nekora_discordbot/bot_error.log
+```
